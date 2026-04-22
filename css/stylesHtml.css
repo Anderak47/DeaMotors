@@ -190,6 +190,201 @@ html {
     border-radius: 2px;
 }
 
+/*inferior izquierda servicios */
+.texto-inferior {
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    bottom: 0px; /* Distancia desde la parte inferior */
+    left: 130px; /* Distancia desde la izquierda */
+    color: white; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    z-index: 2; /* Asegura que esté por encima de la imagen */
+}
+
+.texto-inferior h2 {
+    font-size: 3.5rem;
+}
+
+/*SERVICIOS*/
+.seccion-servicios {
+    padding: 60px 5%;
+    background-color: #ffffff;
+}
+
+/* GRID DE SERVICIOS */
+.servicios-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* CARD */
+.servicio-box {
+    position: relative;
+    height: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* CONTENEDOR DE IMAGEN */
+.servicio-imagen-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* OVERLAY (ya lo tenías, mejorado) */
+.servicio-imagen-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+/* IMAGEN */
+.servicio-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+/* CONTENIDO */
+.servicio-contenido {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+}
+
+/* TITULO */
+.servicio-titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* BOTÓN */
+.servicio-boton {
+    position: absolute;
+    bottom: 20px;
+    left: -100%;
+    padding: 10px 20px;
+    background-color: #f8a42a;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+/* HOVER EFECTOS */
+.servicio-box:hover .servicio-imagen {
+    transform: scale(1.2);
+    filter: blur(2px);
+}
+
+.servicio-box:hover .servicio-titulo {
+    top: 35%;
+}
+
+.servicio-box:hover .servicio-boton {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
+/* MODAL (mejorado) */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: white;
+    width: 85%;
+    max-width: 850px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.modal-texto {
+    width: 65%;
+    padding: 30px;
+}
+
+.modal-texto h2 {
+    margin-bottom: 10px;
+}
+
+.modal-texto p {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.modal-imagen {
+    width: 35%;
+    object-fit: cover;
+}
+
+/* BOTÓN CERRAR */
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .servicios-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .servicios-container {
+        grid-template-columns: 1fr;
+    }
+
+    .servicio-boton {
+        opacity: 1;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .modal-contenido {
+        flex-direction: column;
+    }
+
+    .modal-texto,
+    .modal-imagen {
+        width: 100%;
+    }
+}
 
 
 

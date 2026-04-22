@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,144 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/modalServicios.js" defer></script>
 
 </head>
+
 <body>
     <header id="header-container"></header>
+    <div class="portada-container">
+        <!-- Iconos de redes sociales -->
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@tuusuario" target="_blank" class="social-icon"><i
+                    class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/tuusuario" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/tuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/tuusuario" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
 
+        <!-- Imagen de portada -->
+        <div class="portadaImge">
+            <img src="/img/portadaServicios.jpg" alt="Portada" class="original-img">
+        </div>
+
+        <!-- Texto en la parte inferior izquierda -->
+        <div class="texto-inferior">
+            <h2 class="negrita">Nuestros Servicios</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <h5 class="textLlamativo">Brindamos servicios de diagnóstico, mantenimiento y reparación automotriz. ¡Confía en
+            nosotros!</h5>
+    </div>
+
+    <section aria-labelledby="servicios-diagnostico" class="seccion-servicios">
+        <h2 id="servicios-diagnostico" class="sr-only">Servicios de Diagnóstico Electrónico Automotriz</h2>
+
+        <div class="servicios-container">
+            <!-- Escaneo Computarizado -->
+            <div class="servicio-box" id="escaneo">
+                <div class="servicio-imagen-container">
+                    <img src="/img/escaneo.webp" alt="Escaneo computarizado de vehículo" class="servicio-imagen">
+                </div>
+                <div class="servicio-contenido">
+                    <h3 class="servicio-titulo negrita">Escaneo Computarizado</h3>
+                    <button class="servicio-boton" onclick="mostrarModal('escaneo')"
+                        aria-label="Más información sobre escaneo computarizado">
+                        Más información <span class="arrow">➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Diagnóstico de Sensores -->
+            <div class="servicio-box" id="sensores">
+                <div class="servicio-imagen-container">
+                    <img src="/img/sensores.webp" alt="Diagnóstico de sensores automotrices" class="servicio-imagen">
+                </div>
+                <div class="servicio-contenido">
+                    <h3 class="servicio-titulo negrita">Diagnóstico de Sensores</h3>
+                    <button class="servicio-boton" onclick="mostrarModal('sensores')"
+                        aria-label="Más información sobre diagnóstico de sensores">
+                        Más información <span class="arrow">➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sistema Eléctrico -->
+            <div class="servicio-box" id="electrico">
+                <div class="servicio-imagen-container">
+                    <img src="/img/electrico.webp" alt="Revisión del sistema eléctrico del vehículo"
+                        class="servicio-imagen">
+                </div>
+                <div class="servicio-contenido">
+                    <h3 class="servicio-titulo negrita">Sistema Eléctrico</h3>
+                    <button class="servicio-boton" onclick="mostrarModal('electrico')"
+                        aria-label="Más información sobre sistema eléctrico">
+                        Más información <span class="arrow">➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Diagnóstico de ECU -->
+            <div class="servicio-box" id="ecu">
+                <div class="servicio-imagen-container">
+                    <img src="/img/ecu.webp" alt="Diagnóstico de la ECU del vehículo" class="servicio-imagen">
+                </div>
+                <div class="servicio-contenido">
+                    <h3 class="servicio-titulo negrita">Diagnóstico ECU</h3>
+                    <button class="servicio-boton" onclick="mostrarModal('ecu')"
+                        aria-label="Más información sobre diagnóstico ECU">
+                        Más información <span class="arrow">➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Borrado de Códigos -->
+            <div class="servicio-box" id="codigos">
+                <div class="servicio-imagen-container">
+                    <img src="/img/codigos.webp" alt="Borrado de códigos de error" class="servicio-imagen">
+                </div>
+                <div class="servicio-contenido">
+                    <h3 class="servicio-titulo negrita">Borrado de Códigos</h3>
+                    <button class="servicio-boton" onclick="mostrarModal('codigos')"
+                        aria-label="Más información sobre borrado de códigos">
+                        Más información <span class="arrow">➜</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Programación -->
+            <div class="servicio-box" id="programacion">
+                <div class="servicio-imagen-container">
+                    <img src="/img/programacion.webp" alt="Programación de módulos automotrices"
+                        class="servicio-imagen">
+                </div>
+                <div class="servicio-contenido">
+                    <h3 class="servicio-titulo negrita">Programación</h3>
+                    <button class="servicio-boton" onclick="mostrarModal('programacion')"
+                        aria-label="Más información sobre programación">
+                        Más información <span class="arrow">➜</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal (reutiliza el mismo) -->
+        <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-titulo"
+            aria-describedby="modal-descripcion">
+            <span class="cerrar-modal" onclick="cerrarModal()" aria-label="Cerrar ventana modal">&times;</span>
+            <div class="modal-contenido">
+                <div class="modal-texto">
+                    <h2 id="modal-titulo" class="center negrita" tabindex="-1">Título del Servicio</h2>
+                    <div id="modal-line" class="decorative-line"></div>
+                    <p id="modal-descripcion" class="alinearText">Descripción del servicio.</p>
+                </div>
+                <img src="" alt="" class="modal-imagen" id="modal-imagen">
+            </div>
+        </div>
+    </section>
 
     <a href="https://api.whatsapp.com/send?phone=51943404868" target="_blank" class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i>
@@ -42,5 +176,25 @@
             });
 
     </script>
+    <script>
+        const textLlamativo = document.querySelector('.textLlamativo');
+        // Configura el Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Agrega la clase .visible cuando el elemento es visible
+                    entry.target.classList.add('visible');
+                } else {
+                    // Remueve la clase .visible cuando el elemento no es visible
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.5 // Activa la animación cuando el 50% del elemento es visible
+        });
+        // Observa el elemento .textLlamativo
+        observer.observe(textLlamativo);
+    </script>
 </body>
+
 </html>
